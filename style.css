@@ -1,0 +1,803 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+/* global */
+*{
+    margin:0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: white;
+    font-family: 'Noto Serif', serif;
+}
+.black-shadow{
+    box-shadow: 0 48px 48px rgba(59, 47, 47, 0.2);
+}
+.container{
+    width: 100%;
+}
+.large-text{
+    font-size: 4rem;
+    font-weight: 700;
+}
+p{
+    color:#57606F;
+}
+.show{
+    display: block;
+}
+.hidden{
+    display: none;
+}
+
+/* -------------------------------------------------------------- */
+/* header */
+header{
+    max-width: 1280px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    background-color: white;
+}
+.left-nav{
+    grid-column: 1/3;
+}
+
+.mid-nav{
+    display: flex;
+    background: black;
+    height: 100%;
+    position: fixed;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    translate: all 0.5s;
+    left: 0;
+    width: 100%;
+    translate: all 0.5s;
+}
+.open-nav{
+    z-index: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.close-group{
+    width: 40px;
+    height: 40px;
+    z-index: -3;
+    position: absolute;
+    top:2rem;
+    right:2rem;
+    opacity: 0;
+
+}
+.close-button{
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+.mid-nav li {
+    padding: .5rem;
+}
+.mid-nav li a{
+    color: white;
+}
+
+.right-nav {
+    align-items: center;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.login-button{
+    background-color: #2ED573;
+    padding: 1rem 2.5rem;
+    color: white;
+    display: none;
+}
+.bag-button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.list-container{
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    left: 0;
+    top: 55px;
+}
+.list-container:after{
+    content:'';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -8px;
+    left: 53px;
+    border-bottom:solid 10px white;
+    border-left:solid 10px transparent;
+    border-right:solid 10px transparent;
+}
+.list-items .list-item{
+    display: grid;
+    grid-template-areas:
+    'foto nama delete'
+    ;
+    grid-template-columns: .5fr 1fr .5fr;
+    padding: .75rem ;
+    border-bottom: 1px solid #F1F2F6;
+}
+.item-img{
+    grid-area: foto;
+}
+.item-desc{
+    grid-area: nama;
+}
+.delete-item{
+    grid-area: delete;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-img{
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+.foto{
+    width: 100%;
+    height: auto;
+    top: -50%;
+    position: relative;
+}
+.check-container{
+    padding: .75rem ;   
+}
+.check-list{
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: .75rem 0;
+    background-color: #2ED573;
+    color: white;
+}
+/* header */
+/* ------------------------------------------------------------*/
+
+/* hero */
+.hero{
+    height: 700px;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero::after{
+    content:'';
+    background-color: black;
+    opacity: .48;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.hero .large-text{
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+/* hero */
+/* ------------------------------------------- */
+/* about */
+.about{
+    padding: 100px 1.5rem;
+    display: grid;
+    grid-template-areas: 
+    "about about" 
+    "text text" 
+    ;  
+    grid-template-columns: 1fr 1fr;
+}
+.about .image{
+    grid-area: about;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.about .image .about-image{
+    width: 100%;
+    height: auto;
+}
+.about .particle{
+    position: absolute;
+    z-index: -1;
+    right: 100px;
+    bottom: 0;
+}
+.about .text{
+    grid-area: text;
+    margin-top:3rem;
+}
+.about .text h1{
+    position: relative;
+}
+.about .text h1::after{
+    position: absolute;
+    content: '';
+    background-color: #2ED573;
+    width: 4rem;
+    height: .5rem;
+    bottom: -10px;
+    left: 0;
+}
+.about .text p{
+    margin-top: 48px;
+}
+.link-container{
+    display: flex;
+    margin-top: 3rem;
+    width: fit-content;
+    position: relative;
+}
+.link-button p{
+    margin: 0;
+    padding: 0;
+}
+.link-button{
+    background-color: white;
+    box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2.5rem;
+}
+.link-container .arrow{
+    background-color: #2ED573;;
+    box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2.5rem;
+}
+.link-see{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+/* about */
+/* ------------------------------------------ */
+
+/* provide */
+    .provide{
+        padding: 0 1.5rem;
+        margin:100px 0;
+    }
+    .provide-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .provide .provide-container h1{
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        justify-self: center;
+    }
+    .provide h1:after{
+        content: '';
+        width: 4rem;
+        height: .5rem;
+        background-color: #2ED573;
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - (4rem/2));
+    }
+    .provide-items{
+        display: grid;
+        grid-template-areas: 
+        'provide1 provide1 provide1'
+        'provide2 provide2 provide2'
+        'provide3 provide3 provide3'
+        ;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+    .provide1, .provide2, .provide3{
+        padding: 2rem;
+        box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.2) ;
+        border: 1px solid #F1F2F6 ;
+        text-align: center;
+    }
+    .provide1 .svg-container, .provide2 .svg-container, .provide2 .svg-container{
+        display: flex;
+        justify-content: center;
+    } 
+    .provide1 h2, .provide2 h2, .provide3 h2{
+        margin:1rem;
+    }
+    .provide1{
+        grid-area: provide1;
+    }
+    .provide2{
+        grid-area: provide2;
+    }
+    .provide3{
+        grid-area: provide3;
+    }
+/* provide */
+/* ------------------------------------------ */
+
+/* product */
+    .products{
+        padding: 0 1.5rem;
+        margin:100px 0 ;
+        display: flex;
+        justify-content: center;
+    }
+    .products-container h1{
+        position: relative;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    .products-container h1:after{
+        content: '';
+        width: 4rem;
+        height: .5rem;
+        background-color: #2ED573;
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - (4rem/2));
+    }
+    .product-items{
+        display: grid;
+        grid-template-areas: 
+        'product1'
+        'product2'
+        'product3'
+        'product4'
+        ;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .product1, .product2, .product3, .product4{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .product1{
+        grid-area: product1;
+    }
+    .product2{
+        grid-area: product2;
+    }
+    .product3{
+        grid-area: product3;
+    }
+    .product4{
+        grid-area: product4;
+    }
+    .description-product{
+        padding: 1.5rem 1.75rem;
+        border: solid 1px #F1F2F6;
+        margin: 0;
+    }
+    .prodcut-image-container{
+        width: 1fr;
+        height: auto;
+    }
+    .product-image{
+        width: 100%;
+        height: auto;
+    }
+    .button-product{
+        display: flex;
+        width: 100%;
+        position: relative;
+    }
+    .button-chart, .button-icon{
+        height: 4rem;
+    }
+    .button-chart{
+        width: 80%;
+        border: 1px solid #F1F2F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .button-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        background-color: #1E90FF;
+    }
+    .button-detail{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+/* product */
+/* ----------------------------------- */
+
+/* customer */
+.customer{
+    margin: 100px 0;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.customer-container{
+    display: grid;
+    grid-template-areas: 
+    'description-customer description-customer'
+    'logo-customer logo-customer'
+    ;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.customer-container .large-text{
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+}
+.customer-container .large-text:after{
+    content:'';
+    width: 4rem;
+    height: .5rem;
+    background-color: #2ED573;
+    bottom: 0;
+    position: absolute;
+    right: calc(50% - (4rem / 2));
+}
+.description-customer{
+    grid-area: description-customer;
+}
+.logo-customer{
+    grid-area: logo-customer;
+}
+.total-company{
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: flex-end;
+}
+.total-company p{
+    margin-left: 1rem;
+}
+.logos{
+    display: grid;
+    grid-template-areas: 
+    'logo-item1 logo-item2 '
+    'logo-item3 logo-item4 '
+    'logo-item5 logo-item6 '
+    ;
+    gap:20px;
+}
+.logo-item1, .logo-item2, .logo-item3, .logo-item4, .logo-item5, .logo-item6{
+    height: 7rem;
+    border: 1px solid #F1F2F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.logo-item1{
+    grid-area: logo-item1;
+}
+.logo-item2{
+    grid-area: logo-item2;
+}
+.logo-item3{
+    grid-area: logo-item3;
+}
+.logo-item4{
+    grid-area: logo-item4;
+}
+.logo-item4{
+    grid-area: logo-item4;
+}
+.logo-item5{
+    grid-area: logo-item5;
+}
+.logo-item6{
+    grid-area: logo-item6;
+}
+/* customer */
+/* ----------------------------------- */
+
+/* testimonial */
+.testimonial{
+    margin:100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+.testimonial-container h1{
+    text-align: center;
+    position: relative;
+    margin-bottom: 3rem;
+}
+.testimonial-container h1:after{
+    content: '';
+    width: 4rem;
+    height: .5rem;
+    background-color: #2ED573;
+    position: absolute;
+    right: calc(50% - (4rem/2)) ;
+    bottom: 0;
+}
+.testimonials{
+    display: grid;
+    grid-template-areas: 
+    'testimonial1 testimonial1 '
+    'testimonial2 testimonial2'
+    'testimonial3 testimonial3'
+    'testimonial4 testimonial4'
+    ;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.testimonial1{
+    grid-area: testimonial1;
+}
+.testimonial2{
+    grid-area: testimonial2;
+}
+.testimonial3{
+    grid-area: testimonial3;
+}
+.testimonial4{
+    grid-area: testimonial4;
+}
+.testimonial1, .testimonial2, .testimonial3, .testimonial4{
+    display: flex;
+    background-color: white;
+    border-bottom: .5rem solid #2ED573;
+    border-top: 1px solid #F1F2F6;
+    border-left: 1px solid #F1F2F6;
+    border-right: 1px solid #F1F2F6;
+    min-height: 200px;
+}
+.left-testimonial, .right-testimonial{
+    padding: 1rem 1.5rem;
+}
+.green-circle{
+    width: 80px;
+    height: 80px;
+    background-color: #2ED573;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.green-circle h2{
+    color: white;
+}
+.star-icon{
+    margin-bottom:1rem;
+}
+/* testimonial */
+/* ----------------------------------- */
+
+
+/* footer */
+footer{
+    background-color: black;
+    margin-top:100px;
+    padding: 3rem 1.5rem;
+}
+.footer-container{
+    display: grid;
+    grid-template-areas: 
+    'logo-plantzia'
+    'resource'
+    'contact'
+    'social-media'
+    ;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    color: white;
+}
+.logo-plantzia{
+    grid-area: logo-plantzia;
+}
+.resource{
+    grid-area: resource;
+}
+.contact{
+    grid-area: contact;
+}
+.social-media{
+    grid-area: social-media;
+
+}
+.resource-link li, .contact p, .customer-service p{
+    margin: .5em 0;
+}
+.resource-link li a, .address p, .email p, .phone p, .customer-service p{
+    color: white;
+}
+.logo-social ul{
+    display: flex;
+}
+.logo-social ul li{
+    margin:.5em 0;
+}
+.logo-social ul li:nth-child(2){
+    margin: .5em 1rem;
+}
+/* footer */
+/* ----------------------------------- */
+
+/* responsive */
+@media (min-width:555px){
+    /* header */
+    .header{
+        max-width: 1280px;
+    }
+    .left-nav{
+        grid-column: 1/2;
+    }
+    /* header */
+    .item-img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width:769px){
+
+    /* header */
+    .mid-nav li {
+        padding: .5rem 2rem;
+    }
+    .large-text{
+        font-size: 4rem;
+    }
+    .mid-nav{
+        grid-column: 2/3;
+        opacity: 100%;
+        background: none;
+        flex-direction: row ;
+        position: relative;
+    }
+    .mid-nav li a{
+        color:#57606F;
+    }
+
+    .right-nav{
+        grid-column: 3/4;
+        justify-content: space-around;
+    }
+
+    .right-nav .open-container{
+        display: none;
+    }
+    .login-button{
+        display: block;
+    }
+    .close-group{
+        display: none;
+    }
+    /* header */
+
+
+    /* about */
+    .about{
+        grid-template-areas: 
+        "about text" 
+        "about text" 
+        ;  
+    }
+    .about .image .about-image{
+        width: 400px;
+        height: auto;
+    }
+    /* about */
+
+    /* provide */
+    .provide-items{
+        display: grid;
+        grid-template-areas: 
+        'provide1 provide2 provide3'
+        'provide1 provide2 provide3'
+        'provide1 provide2 provide3'
+        ;
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+    /* provide */
+
+    /* product */
+    .product-items{
+        display: grid;
+        grid-template-areas: 
+        'product1 product2 product3 product4'
+        'product1 product2 product3 product4'
+        'product1 product2 product3 product4'
+        'product1 product2 product3 product4'
+        ;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    /* product */
+
+    /* customer */
+    .customer-container .large-text{
+        text-align: left;
+    }
+    .customer-container .large-text:after{
+        left: 0;
+    }
+    .customer-container{
+        grid-template-areas: 
+        'description-customer logo-customer'
+        'description-customer logo-customer'
+        ;
+    }
+    .logos{
+        grid-template-areas: 
+        'logo-item1 logo-item1 logo-item2 logo-item2 logo-item3 logo-item3'
+        'logo-item4 logo-item4 logo-item5 logo-item5 logo-item6 logo-item6'
+        ;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    /* customer */
+
+    /* testimonial */
+    .testimonials{
+        grid-template-areas: 
+        'testimonial1 testimonial2 '
+        'testimonial1 testimonial2'
+        'testimonial3 testimonial4'
+        'testimonial3 testimonial4'
+        ;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* testimonial */
+
+    /* footer */
+    .footer-container{
+        grid-template-areas: 
+        'logo-plantzia resource contact social-media'
+        ;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /* footer */
+}
+
+@media (min-width:1440px){
+    .about .image .about-image{
+        width: auto;
+        height: auto;
+    }
+    .particle{
+        top:260px;
+        left: 25px;
+        width: auto;
+        height: auto;
+    }
+}
+
